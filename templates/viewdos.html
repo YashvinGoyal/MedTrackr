@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../static/assets/css/addd.css" />
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+    <link
+      href="https://fonts.googleapis.com/css2?family=BIZ+UDGothic&family=Bruno+Ace&family=Quicksand:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=BIZ+UDGothic&family=Bruno+Ace&family=Quicksand:wght@300;400;500;600;700&family=Raleway:ital,wght@0,100;0,200;1,300&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Satisfy&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Red+Hat+Display:ital@1&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Red+Hat+Display:ital@1&family=Sigmar&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lobster&family=Sigmar&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Kanit:wght@200&family=Lobster&family=Sigmar&display=swap"
+      rel="stylesheet"
+    />
+    <link href="https://fonts.googleapis.com/css2?family=Lilita+One&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bruno+Ace+SC&family=Kanit:wght@200&family=Lobster&family=Sigmar&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <title>Your Doses</title>
+</head>
+<body style="background-image:url(../static/assets/img3.jpg) ">
+    <nav>
+        <div class="navbar__container">
+            <a href="/" id="navbar__logo">MediTrackr</a>
+            <!-- https://thumbs.dreamstime.com/b/time-to-take-medication-as-prescribed-physician-94486533.jpg -->
+        </div>
+    </nav>
+    <main>
+        {%for med in medi %}
+          <div class="card mb-3 mx-3 my-4" style="max-width: 540px;">
+            <div class="row g-0" style="border-color:rgb(180, 12, 12) ;width: 1150px ;border-width:300px">
+              <div class="col-md-4" style="background-color:#ede8e8 ">
+                <img src="../static/assets/img4.jpg"  style="height:230px" class="img-fluid rounded-start" alt="...">
+              </div>
+              <div class="col-md-8"style="background-color:#ede8e8;border-color:black">
+                <div class="card-body " ></div>
+                  <h5 class="card-title">Name: <b>{{med.nameM}}</b></h5>
+                  <p class="card-text">Doses: <b>{{med.doses}}</b></p>
+                  <p class="card-text">Time: <b>{{med.frequency}}</b></p>
+                  <p class="card-text"><small class="text-body-secondary"><b>Don't Forget To Take</b></small></p>
+                 <div>
+                    <div class="mbr-section-btn align-center"><a class="btn btn-form btn-info display-7 mx-2" href="/edit/{{med.sno}}">Edit It</a>
+                    <a class="btn btn-form btn-info display-7" href="/delete/{{med.sno}}">Delete It</a></div>
+                 </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- <div class="card text-bg-dark">
+            <img src="../static/assets/img4.jpg" class="card-img" alt="...">
+            <div class="card-img-overlay">
+                <h5 class="card-title">{{med.nameM}}</h5>
+                <p class="card-text">{{med.doses}}</p>
+                <p class="card-text">{{med.frequency}}</p>
+                <p class="card-text"><small class="text-body-secondary">><b>Don't Forget To Take</b></small></p>
+            </div>
+          </div> -->
+          {%endfor%}
+    </main>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+  </body>
+    <script src="../../static/assets/js/script.js" ></script>
+</body>
+</html>
